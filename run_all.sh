@@ -4,8 +4,8 @@ print_usage() {
 	echo "Usage: $(basename $0) <journalDirectory> <timelimit>"
 }
 
-if [ "$#" -ne 1 ]; then
-	print_usage;s
+if [ "$#" -ne 2 ]; then
+	print_usage;
 	exit 1;
 fi
 
@@ -20,6 +20,6 @@ do
 	bodyname="${journal%\.*}"
 	jobname="$(basename $bodyname)"
 	
-	sbatch --time=$TIME --job-name=$jobname ./run_job.sh $jobname 
+	sbatch --time=$TIMELIMIT --job-name=$jobname --output="$bodyname.out.txt" --error="$bodyname.err.txt" ./run_job.sh $bodyname 
 	
 done

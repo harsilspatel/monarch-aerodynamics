@@ -3,8 +3,6 @@
 #SBATCH --nodes=1 				# allocate 1 node for the job
 #SBATCH --ntasks-per-node=4
 #SBATCH --exclusive 			# no other jobs on the nodes while job is running
-#SBATCH --error="%x.err" 		# the file to write stderr for fluent job
-#SBATCH --output="%x.out" 		# the file to write stdout for fluent job
 #SBATCH --partition=short
 #SBATCH --ntasks=4
 
