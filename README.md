@@ -1,4 +1,15 @@
 # mhp-aerodynamics-scripts
+
+- [intro](#intro)
+- [usage](#usage)
+  * [slurm commands](#slurm-commands)
+  * [single job execution](#single-job-execution)
+  * [batch job execution](#batch-job-execution)
+- [tips](#tips)
+- [references](#references)
+- [todos](#todos)
+
+## intro
 I am working closely with the currently Aero team lead -- Viencent He -- to assist the team perform a smooth transition, to perform CFD simulations, from Monash Workstations to MonARCH clusters. Furthermore, I will assist the team automate the process of backing up of the resulting data files to the team drives for the analysis.
 
 We will be reaching out to the monARCH team to help you get access to the clusers. Please note that, in the event of misuse of the provided computation credits, Vince reserves the rights to terminate your access to the clusters.
@@ -17,6 +28,7 @@ Should you need any further help, please do not hesitate to contact me or Vince 
 | `sacct -j {jobid}`          | to check the accounting information of a given job  |
 | `scancel {jobid}`           | to cancel a job that you own given its unique jobId |
 | `scancel -u {userid}`       | to cancel all your jobs on the cluster              |
+
 
 ### single job execution
    ```sh
@@ -42,13 +54,16 @@ The `run_job.sh` script will output the stdout and stderr files in the same dire
 
 The `run_all.sh` script expects two arguments -- timelimit and a directory containing journal files. It recursively finds all the journal files and list calls the `run_job.sh` script with the specified `timelimit`.
 
+
 ## tips
 1. Use the `short` run on monARCH if the simulation will be running for less than 24 hours.
 2. Specify the tighest timelimit possible for quicker scheduling of the job.
 
+
 ## references
 1. Monash's [MonARCH documentation](https://docs.monarch.erc.monash.edu.au/MonARCH/slurm/slurm-overview.html)
 2. University of Connecticut's Fluent [Guide](https://wiki.hpc.uconn.edu/index.php/Fluent_Guide) helpful.
+
 
 ## todos
 - [ ] Automated backups to team drives
