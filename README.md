@@ -14,11 +14,11 @@ Hi there,
 
 If you're reading this, it is likely that you are one of the members of the aerodynamics team working on the CFD simulations for the bike. And if you are, I have some good news for you! ^_^
 
-I have been working closely with your team lead -- Vincent He -- to assist the team perform a smooth transition from Monash Workstations to MonARCH clusters, to perform the simulations. Consequently, I have created this repository to equip you with the essential information that you will need in order to operate the clusters. However, this documentation does not contain an exhaustive list of commands that you will ever need to execute. Therefore, to assist you with the basic linux commands and MonARCH systems I will be running introductory workshop(s). Additionally, after consulting Vince, I will establish and articulate a workflow and a framework for organising the project in the upcoming team meetings. In regards to getting the permissions for operating on the project we will soon be reaching out to the MonARCH team to help you get access to the clusters ;)
+I have been working closely with your team lead -- Vincent He -- to assist the team perform a smooth transition from Monash Workstations to [MonARCH](https://support.ehelp.edu.au/support/solutions/articles/6000115468-monash-monarch-user-documentation) clusters, to perform the simulations. Consequently, I have created this repository to equip you with the essential information that you will need in order to operate the clusters. However, this documentation does not contain an exhaustive list of commands that you will ever need to execute. Therefore, to assist you with the basic linux commands and MonARCH systems I will be running introductory workshop(s). Additionally, after consulting Vince, I will establish and articulate a workflow and a framework for organising the project in the upcoming team meetings. In regards to getting the permissions for operating on the project we will soon be reaching out to the MonARCH team to help you get access to the clusters ;)
 
 Furthermore, my responsibilities will include, but will not be limited to, keeping this repository up-to-date as per the team requirements and assisting the team automate the process of backing up the resulting data files to the team drives for the analysis :D
 
-Should you need any assistance or if there is anything in the documentation that is not articulated well, please do not hesitate to contact me or Vincent on Slack :)
+Should you need any assistance or if there is anything in the documentation that is not articulated well, please do not hesitate to contact me or Vincent on the team [Slack](http://monashhumanpower.slack.com/) :)
 
 ## usage
 ### slurm commands
