@@ -8,10 +8,13 @@ This guide, by no means, is an exhaustive list of commands you will need to reme
 Should you need any further help, please do not hesitate to contact me or Vince on Slack.
 
 ## usage
+### single job execution
    ```sh
-   ./run_all.sh <journalDir> <timelimit>
+   sbatch --time=<timelimit> --output=<stdoutFile> --error=<stdoutFile> ./run_job.sh <bodyname> 
    ```
-timelimit will be passed as a slurm argument which accepts the following time formats 
+`bodyname` is the relative filepath of the journal file without the .jou extension (assists in generation of stdout and stderr files)
+
+`timelimit` will be passed as a slurm argument which accepts the following time formats,
 - `minutes`
 - `minutes:seconds`
 - `hours:minutes:seconds`
@@ -19,16 +22,25 @@ timelimit will be passed as a slurm argument which accepts the following time fo
 - `days-hours:minutes`
 - `days-hours:minutes:seconds`
 
-The `run_all.sh` script expects two arguments -- timelimit and a directory containing journal files -- and simply list calls the `run_job.sh` script. The run `run_job.sh` script will output the stdout and stderr files in the directory of the corresponding journal file.
+The `run_job.sh` script will output the stdout and stderr files in the same directory as the corresponding journal file.
+   
+
+### batch job execution
+   ```sh
+   ./run_all.sh <journalDir> <timelimit>
+   ```
+
+The `run_all.sh` script expects two arguments -- timelimit and a directory containing journal files. It recursively finds all the journal files and list calls the `run_job.sh` script with the specified `timelimit`.
 
 ## tips
 1. Use the `short` run on monARCH if the simulation will be running for less than 24 hours.
-2. Try to avoid spaces in the filenames.
+2. Specify the tighest timelimit possible for quicker scheduling of the job.
 
 ## references
-1. University of Connecticut's [Fluent Guide](https://wiki.hpc.uconn.edu/index.php/Fluent_Guide)
-2. Monash's [MonARCH documentation](https://docs.monarch.erc.monash.edu.au/MonARCH/slurm/slurm-overview.html)
+1. Monash's [MonARCH documentation](https://docs.monarch.erc.monash.edu.au/MonARCH/slurm/slurm-overview.html)
+2. University of Connecticut's Fluent [Guide](https://wiki.hpc.uconn.edu/index.php/Fluent_Guide) helpful.
 
 ## todos
-[ ] Backup to team drives
-[ ] A script to parameterize some of the variables whcih include, but are not limited to, the running file, number of iterations, force overwriting of the existing files.
+- [ ] Automated backups to team drives
+- [ ] Create MHP branded email for the aero team and send notifications on job completions
+- [ ] A script to parameterize some of the variables which include, but are not limited to, the mesh file, number of iterations, force overwriting of the existing files.
