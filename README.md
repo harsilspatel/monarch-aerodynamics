@@ -7,6 +7,20 @@ This guide, by no means, is an exhaustive list of commands you will need to reme
 
 Should you need any further help, please do not hesitate to contact me or Vince on Slack.
 
+## usage
+   ```sh
+   ./run_all.sh <journalDir> <timelimit>
+   ```
+timelimit will be passed as a slurm argument which accepts the following time formats 
+- `minutes`
+- `minutes:seconds`
+- `hours:minutes:seconds`
+- `days-hours`
+- `days-hours:minutes`
+- `days-hours:minutes:seconds`
+
+The `run_all.sh` script expects two arguments -- timelimit and a directory containing journal files -- and simply list calls the `run_job.sh` script. The run `run_job.sh` script will output the stdout and stderr files in the directory of the corresponding journal file.
+
 ## tips
 1. Use the `short` run on monARCH if the simulation will be running for less than 24 hours.
 2. Try to avoid spaces in the filenames.
