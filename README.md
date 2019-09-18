@@ -8,6 +8,16 @@ This guide, by no means, is an exhaustive list of commands you will need to reme
 Should you need any further help, please do not hesitate to contact me or Vince on Slack.
 
 ## usage
+### slurm commands
+| command                   | description                                         |
+|---------------------------|-----------------------------------------------------|
+| `sbatch job.sh`             | to submit a job for batch execution                 |
+| `squeue -u {userid} `       | to display the status of your jobs on the queue     |
+| `scontrol show job {jobid}` | to check the status (and other details) of a job    |
+| `sacct -j {jobid}`          | to check the accounting information of a given job  |
+| `scancel {jobid}`           | to cancel a job that you own given its unique jobId |
+| `scancel -u {userid}`       | to cancel all your jobs on the cluster              |
+
 ### single job execution
    ```sh
    sbatch --time=<timelimit> --output=<stdoutFile> --error=<stdoutFile> ./run_job.sh <bodyname> 
